@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Login = () => {
+const Login = ({handleLogin}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -11,10 +11,11 @@ const Login = () => {
         // Simulating a login process
         setTimeout(() => {
             setLoading(false);
-            console.log('Email:', email);
-            console.log('Password:', password);
+            // console.log('Email:', email);
+            // console.log('Password:', password);
             // Handle login logic here
         }, 2000); // 2-second delay to simulate a login process
+        handleLogin(email,password);
         setEmail("");
         setPassword("");
     };
